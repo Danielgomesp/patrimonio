@@ -102,20 +102,15 @@
                                    
                                     <?php
                                         include './conn.php';
-                                        $query = "select count(idpatrimonio) as quantidade, sum(valor_compra) as valor from patrimonio where status = 1;";
-                                        $select_resultado = mysqli_query($connect, $query);
+                                        $query_p = "select count(idpatrimonio) as quantidade, sum(valor_compra) as valor from patrimonio where status = 1;";
+                                        $select_resultado = mysqli_query($connect, $query_p);
                                         while ($row = mysqli_fetch_assoc($select_resultado)) {
                                             echo "Itens registrados: $row[quantidade] <br>";
                                             echo "Valor total (compra): $row[valor] <br>";
                                             
                                         }?>
                                   <!---->  
-                                  <div class="box alt">
-                                    <div class="row 50% uniform">
-                                  <div class="4u"><span class="image"><img src="images/banner.JPG" alt="" /></span></div>
-                                    </div>
-                                  </div>
-                                  
+                                
                                   
                                 </div>
                         </div>
