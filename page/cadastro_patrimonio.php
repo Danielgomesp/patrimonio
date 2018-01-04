@@ -181,6 +181,7 @@
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Valor da Compra </label>
                                                         <input type="number" class="form-control" required="" name="valor" id="valor">
+                                                        <small> Para itens antigos, use o valor: 00 </small>
                                                     </div>
                                                 </div>                                              
                                            
@@ -190,6 +191,7 @@
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Nota Fiscal (somente números)</label>
                                                         <input type="nf" class="form-control" required="" name="nf" id="nf">
+                                                        <small> Para itens antigos, use a nf: 00 </small>
                                                     </div>
                                                 </div>                                              
                                             </div>
@@ -199,6 +201,7 @@
                                                     <div>
                                                         <label class="control-label">Data da Compra </label>
                                                         <input type="date" class="form-control" name="data_compra" id="data_compra">
+                                                        <small> Para itens antigos, use a data: 02/12/1999 </small>
                                                     </div>
                                                 </div>
                                              <div class="col-md-12">
@@ -206,6 +209,7 @@
                                              </div>
                                             <div class="clearfix"></div>
                                         </form>
+                                        
                                        
                                     </div>
                                 </div>

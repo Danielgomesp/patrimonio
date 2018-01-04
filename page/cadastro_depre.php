@@ -106,7 +106,7 @@
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Descrição</label>
                                                         <input type="text" class="form-control" required="" name="descricao" id="descricao">
-                                                        <input type="number" class="form-control" required="" name="valor" id="valor" placeholder="Valor (somente número)">
+                                                        <input type="number" class="form-control" required="" name="valor" id="valor" placeholder="Valor percentual anual (somente número)">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -121,6 +121,15 @@
                                     <div class="card-content">
                                         <?php include 'lista_depre.php' ?>
                                     </div>
+                                     
+                                    <div class="card-content">
+                                        <p>
+                                            Consulte a tabela oficial do site da Receita para adições de novos itens. <br>
+                                            <a href="tabela_depreciacao.pdf">Tabela de Depreciação - Receita (PDF).</a>
+                                        </p>
+                                    </div>
+                                     
+                                     
                                 </div>
                                 
                                 
