@@ -184,12 +184,20 @@
                                                         </thead>
                                                         <?php
                                                         include './conn.php';
-
+                                                        session_start(); //inicia sessão que registra as variáveis pra enviar para outra página: PDF.php
+                                                        //variáveis
                                                         $local = $_POST['local'];
                                                         $tipo = $_POST['tipo'];
                                                         $registro = $_POST['registro'];
                                                         $descricao = $_POST['descricao'];
                                                         $nf = $_POST['nf'];
+                                                        //variáveis de sessão
+                                                        $_SESSION['local'] =$local;
+                                                        $_SESSION['tipo']=$tipo;
+                                                        $_SESSION['registro']=$registro;
+                                                        $_SESSION['descricao']=$descricao;
+                                                        $_SESSION['nf']=$nf;
+                                                        
 
                                                         $qr = "select p.idpatrimonio, p.registro, p.descricao, p.data_compra, p.valor_compra, p.nf, t.descricao as tipo, l.descricao as local
                                                 from patrimonio p 

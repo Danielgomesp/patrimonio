@@ -6,15 +6,15 @@
     <?php
     include("../mpdf60/mpdf.php");
     include './conn.php';
-   /*
-$local = $_POST['local'];
-$tipo = $_POST['tipo'];
-$registro = $_POST['registro'];
-$descricao = $_POST['descricao'];
-$nf = $_POST['nf'];
-*/
-$local = '%';
     
+    session_start(); //inicia a sessão para receber as variáveis da página relatorio.php
+   
+$local = $_SESSION['local'];
+$tipo = $_SESSION['tipo'];
+$registro = $_SESSION['registro'];
+$descricao = $_SESSION['descricao'];
+$nf = $_SESSION['nf'];
+   
 //Query and Select
 $qr = "select p.idpatrimonio, p.registro, p.descricao, p.data_compra, p.valor_compra, p.nf, t.descricao as tipo, l.descricao as local
                                                 from patrimonio p 
@@ -22,7 +22,7 @@ $qr = "select p.idpatrimonio, p.registro, p.descricao, p.data_compra, p.valor_co
                                                 on l.idlocal = p.local_idlocal
                                                 inner join tipo t
                                                 on t.idtipo = p.tipo_idtipo
-                                                where l.idlocal like '$local'  and t.idtipo like '%' and p.registro like '%' and p.nf like '%' and p.descricao like '%'and p.status = '1'
+                                                where l.idlocal like $local  and t.idtipo like $tipo and p.registro like $registro and p.nf like $nf and p.descricao like '%$descricao%' and p.status = '1'
                                                 order by p.data_compra desc    
                                                 ;";
 $select = mysqli_query($connect, $qr);
@@ -58,9 +58,15 @@ $html .=
          <td>  $exibe[tipo] </td>
          <td>  $exibe[local] </td>
          </tr>
-         ";      
+         ";   
+$soma_quant = $soma_quant + 1;         
+$soma_valor = $exibe[valor_compra];
 }
-$html .= "</table>";
+$html .= "</table> <br> ";
+
+//Exibe Soma
+$html .= "Quantidade de itens: " . $soma_quant . "<br>";
+$html .= "Valor total: " . $soma_valor;
 
 //Formatação da Tabela
 $stylesheet = "
