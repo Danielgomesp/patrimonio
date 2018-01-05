@@ -171,7 +171,7 @@
                                             <div class = "card">
 
                                                 <div class = "card-content table-responsive">
-                                                    <table class = "table table-hover">
+                                                        <table class = "table table-hover">
                                                         <thead class = "text-warning">
                                                         <th>Nº</th>
                                                         <th>Descrição</th>
@@ -217,6 +217,8 @@
                                                         ?>
                                                     </table>
                                                 </div>
+                                                <div class="clearfix"></div>
+                                                <div class = "col-lg-12 col-md-12"><p> <a href="pdf.php"> Gerar PDF para impressão.</a></p></div>
                                             </div>
                                         </div>
                                     </div>
