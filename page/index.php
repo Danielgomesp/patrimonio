@@ -94,28 +94,37 @@
                 <div class="content">
                     <div class="container-fluid">
                         <div class="col-md-10">
-                             
+                                                     
                                 <div class="card">
                                     <div class="col-md-10">
+                                        <div class="col-md-10">
                                     <h3>Bem vindo ao sistema de patrimônio.</h3>
-                                    <h4>Versão 1.0  -  Lançado 08 de janeiro de 2018</h4>
-                               
-                                    
-                                   
-                                    <?php
-                                        include './conn.php';
-                                        $query_p = "select count(idpatrimonio) as quantidade, sum(valor_compra) as valor from patrimonio where status = 1;";
-                                        $select_resultado = mysqli_query($connect, $query_p);
-                                        while ($row = mysqli_fetch_assoc($select_resultado)) {
-                                            echo "Itens registrados: $row[quantidade] <br>";
-                                            echo "Valor total (compra): $row[valor] <br>";
-                                            
-                                        }?>
-                                  <!---->  
-                                
-                                  
+                                    <h4>Versão 1.1  -  Lançado 08 de janeiro de 2018</h4>
+                                    <p>
+                                        <b>Notas da versão 1.1</b><br> 
+                                        O menu "Relatório" recebeu a opção de alterar informações do cadastro de patrimônio (descrição, valor, tipo). <br>
+                                    </p>
+                                    <p>
+                                        <b>Notas da versão 1.0</b><br> 
+                                        Lançamento oficial do sistema para uso. Todas as funções básicas já estão funcionais.
+                                    </p>
+                                    </div>
                                 </div>
+                                    
                         </div>
+<!--                            <div class="card">
+                                <div class="col-md-10">
+                                    <?php
+//                                include './conn.php';
+//                                $query_p = "select count(idpatrimonio) as quantidade, sum(valor_compra) as valor from patrimonio where status = 1;";
+//                                $select_resultado = mysqli_query($connect, $query_p);
+//                                while ($row = mysqli_fetch_assoc($select_resultado)) {
+//                                    echo "Itens registrados: $row[quantidade] <br>";
+//                                    echo "Valor total (compra): $row[valor] <br>";
+//                                }
+                                    ?>
+                                </div>
+                            </div> -->
                     </div>
                 </div>
             </div>
