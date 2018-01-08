@@ -6,7 +6,7 @@
         <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-        <title>Patrimonio</title>
+        <title>Patrimonio GV Shopping</title>
 
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <meta name="viewport" content="width=device-width" />
@@ -23,6 +23,7 @@
     </head>
 
     <body>
+
         <div class="wrapper">
             <div class="sidebar" data-color="blue" data-image="../assets/img/sidebar-1.jpg">
                 <!--
@@ -37,7 +38,7 @@
 
                 <div class="sidebar-wrapper">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a href="index.php">
                                 <i class="material-icons">dashboard</i>
                                 <p>Dashboard</p>
@@ -57,7 +58,7 @@
                                 <p>Cadastro de local</p>
                             </a>
                         </li>
-                            <li>
+                        <li class="active">
                             <a href="cadastro_tipo.php">
                                 <i class="material-icons">devices_other</i>
                                 <p>Cadastro de tipo de item</p>
@@ -87,60 +88,68 @@
                 </div>
             </div>
 
-            <div class="main-panel">
 
-                <?php include './navbar.php'; //NAV Bar?> 
+            <div class="wrapper">
+                <div class="main-panel">
+                    <div class="content">
+                        <div class="container-fluid">
+                            <div class="row">   
+                                <div class = "col-lg-12 col-md-12">
+                                    <div class = "card">
+                                        <div class="card-header" data-background-color="blue">
+                                            <h4 class="title">Alterar informações</h4>
+                                            <p class="category"></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br>
 
-                <div class="content">
-                    <div class="container-fluid">
-                        <div class="col-md-10">
-                             
-                                <div class="card">
-                                    <div class="col-md-10">
-                                    <h3>Bem vindo ao sistema de patrimônio.</h3>
-                                    <h4>Versão 1.0  -  Lançado 08 de janeiro de 2018</h4>
-                               
-                                    
-                                   
-                                    <?php
-                                        include './conn.php';
-                                        $query_p = "select count(idpatrimonio) as quantidade, sum(valor_compra) as valor from patrimonio where status = 1;";
-                                        $select_resultado = mysqli_query($connect, $query_p);
-                                        while ($row = mysqli_fetch_assoc($select_resultado)) {
-                                            echo "Itens registrados: $row[quantidade] <br>";
-                                            echo "Valor total (compra): $row[valor] <br>";
+                                        <div class="card-content">
+                                            <h5>Informações</h5>
+                                            <?php
+                                            include './conn.php';
+                                            $idtipo = $_GET[idtipo];
+                                            $qr = "select * from tipo where idtipo like $idtipo;";
+                                            $select_tipo = mysqli_query($connect, $qr) or die(msql_error());
+                                            $exibe = mysqli_fetch_assoc($select_tipo);
                                             
-                                        }?>
-                                  <!---->  
-                                
-                                  
+                                            echo "
+                                            <form method='POST' action='renomeando_tipo.php'>
+                                            <input type='hidden' name='idtipo' value='$idtipo' />
+                                            id: " . $exibe[idtipo] . "<br>
+                                            Nome: <input type='text' name='novo_nome' id='novo_nome' placeholder='Novo nome' value='$exibe[descricao]'> <br> 
+                                            <button type='submit' class='btn btn-success pull-left'>Gravar</button>
+                                            </form>
+                                           ";
+                                                                                       
+                                            ?>
+                                                             
+                                            
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div>   
+                </div>            
+                </body>
+                <!--   Core JS Files   -->
+                <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+                <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+                <script src="../assets/js/material.min.js" type="text/javascript"></script>
 
-    </body>
+                <!--  Charts Plugin -->
+                <script src="../assets/js/chartist.min.js"></script>
 
-    <!--   Core JS Files   -->
-    <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
-    <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="../assets/js/material.min.js" type="text/javascript"></script>
+                <!-- Material Dashboard javascript methods -->
+                <script src="../assets/js/material-dashboard.js"></script>
 
-    <!--  Charts Plugin -->
-    <script src="../assets/js/chartist.min.js"></script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
 
-    <!-- Material Dashboard javascript methods -->
-    <script src="../assets/js/material-dashboard.js"></script>
+                        // Javascript method's body can be found in assets/js/demos.js
+                        demo.initDashboardPageCharts();
 
-    <script type="text/javascript">
-        $(document).ready(function () {
+                    });
+                </script>
 
-            // Javascript method's body can be found in assets/js/demos.js
-            demo.initDashboardPageCharts();
-
-        });
-    </script>
-
-</html>
+                </html>
