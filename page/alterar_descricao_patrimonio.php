@@ -58,7 +58,7 @@
                                 <p>Cadastro de local</p>
                             </a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="cadastro_tipo.php">
                                 <i class="material-icons">devices_other</i>
                                 <p>Cadastro de tipo de item</p>
@@ -71,7 +71,7 @@
                             </a>
                         </li>
 
-                        <li>
+                        <li class="active">
                             <a href="relatorio.php">
                                 <i class="material-icons">library_books</i>
                                 <p>Relatório</p>
@@ -98,32 +98,31 @@
                                     <div class = "card">
                                         <div class="card-header" data-background-color="blue">
                                             <h4 class="title">Alterar informações</h4>
-                                            <p class="category"></p>
+                                            <p class="category">Selecione o novo tipo para o patrimônio e clique em GRAVAR</p>
                                         </div>
                                         <div class="clearfix"></div>
                                         <br>
 
                                         <div class="card-content">
                                             <h5>Informações</h5>
+                                            
                                             <?php
                                             include './conn.php';
-                                            $idtipo = $_GET[idtipo];
-                                            $qr = "select * from tipo where idtipo like $idtipo;";
-                                            $select_tipo = mysqli_query($connect, $qr) or die(msql_error());
-                                            $exibe = mysqli_fetch_assoc($select_tipo);
+                                            $idpatrimonio = $_GET[idpatrimonio];
+                                            $qr = "select * from patrimonio where idpatrimonio like $idpatrimonio;";
+                                            $select_p = mysqli_query($connect, $qr) or die(msql_error());
+                                            $exibe = mysqli_fetch_assoc($select_p);
                                             
                                             echo "
-                                            <form method='POST' action='renomeando_tipo.php'>
-                                            <input type='hidden' name='idtipo' value='$idtipo' />
-                                            id: " . $exibe[idtipo] . "<br>
-                                            Nome: <input type='text' name='novo_nome' id='novo_nome' placeholder='Novo nome' value='$exibe[descricao]'> <br> 
+                                            <form method='POST' action='alterando_descricao_patrimonio.php'>
+                                            <input type='hidden' name='idpatrimonio' value='$idpatrimonio' />
+                                            Registro:  $exibe[registro] <br>
+                                            Descrição: <input type='text' name='novo_nome' id='novo_nome' value='$exibe[descricao]'> <br> 
+                                            ";
+                                                        ?>
+                                                    </div>    
                                             <button type='submit' class='btn btn-success pull-left'>Gravar</button>
                                             </form>
-                                           ";
-                                                                                       
-                                            ?>
-                                                             
-                                            
                                         </div>
                                     </div>
                                 </div>

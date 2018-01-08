@@ -60,7 +60,7 @@ $html .=
          </tr>
          ";   
 $soma_quant = $soma_quant + 1;         
-$soma_valor = $exibe[valor_compra];
+$soma_valor = $soma_valor + $exibe[valor_compra]; 
 }
 $html .= "</table> <br> ";
 

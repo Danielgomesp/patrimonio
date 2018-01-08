@@ -213,11 +213,11 @@
                                                         while ($exibe = mysqli_fetch_assoc($select_patrimonio)) {
                                                             echo "<tr>";
                                                             echo "<td>" . $exibe[registro] . "</td>";
-                                                            echo "<td>" . $exibe[descricao] . "</td>";
+                                                            echo "<td>" . "<a href='alterar_descricao_patrimonio.php?idpatrimonio=". "$exibe[idpatrimonio]" ." ' title='Alterar Descrição'> $exibe[descricao] </a>". "</td>";
                                                             echo "<td>" . $exibe[data_compra] . "</td>";
-                                                            echo "<td>" . $exibe[valor_compra] . "</td>";
+                                                            echo "<td>" . "<a href='alterar_valor_patrimonio.php?idpatrimonio=". "$exibe[idpatrimonio]" ." ' title='Alterar Valor'> $exibe[valor_compra] </a>". "</td>";
                                                             echo "<td>" . $exibe[nf] . "</td>";
-                                                            echo "<td>" . $exibe[tipo] . "</td>";
+                                                            echo "<td>" . "<a href='alterar_tipo_patrimonio.php?idpatrimonio=". "$exibe[idpatrimonio]" ." ' title='Alterar Tipo'> $exibe[tipo] </a>". "</td>";
                                                             echo "<td>" . $exibe[local] . "</td>";
                                                             echo "<td>" . "<a href='baixar.php?idpatrimonio=". "$exibe[idpatrimonio]" ." ' title='baixar'> <i class='material-icons'>arrow_downward</i> </a>". "</td>";
                                                             echo "</tr>";
