@@ -75,7 +75,10 @@ $stylesheet = "
   text-align:left;
   border: 1px solid black;
   }
-";
+  th{
+  text-align:left;
+  }
+ ";
 
 //Motor PDF
         $mpdf = new mPDF();
