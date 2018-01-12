@@ -22,7 +22,7 @@
                         $select = mysqli_query($connect, $qr) or die(msql_error());
                         while ($exibe = mysqli_fetch_assoc($select)) {
                             echo "<tr>";
-                            echo "<td>" . $exibe[iddepreciacao]. "</td>";
+                            echo "<td>" . $exibe['iddepreciacao']. "</td>";
                             echo "<td> <a href='renomear_depre.php?iddepre= $exibe[iddepreciacao] ' title='Renomear'>  $exibe[descricao] </a> </td>";
                             echo "<td>" . $exibe[valor]. "</td>";                            
                         }

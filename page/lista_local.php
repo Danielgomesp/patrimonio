@@ -21,7 +21,7 @@
                         $select = mysqli_query($connect, $qr) or die(msql_error());
                         while ($exibe = mysqli_fetch_assoc($select)) {
                             echo "<tr>";
-                            echo "<td>" . $exibe[idlocal] . "</td>";
+                            echo "<td>" . $exibe['idlocal'] . "</td>";
                             echo "<td> <a href='renomear_local.php?idlocal= $exibe[idlocal] ' title='Renomear'>  $exibe[descricao] </a> </td>";
                         }
                         ?>

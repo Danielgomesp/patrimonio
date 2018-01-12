@@ -57,7 +57,7 @@
                                 <p>Cadastro de local</p>
                             </a>
                         </li>
-                            <li>
+                        <li>
                             <a href="cadastro_tipo.php">
                                 <i class="material-icons">devices_other</i>
                                 <p>Cadastro de tipo de item</p>
@@ -94,27 +94,31 @@
                 <div class="content">
                     <div class="container-fluid">
                         <div class="col-md-10">
-                                                     
-                                <div class="card">
+
+                            <div class="card">                                
+                                <div class="card">                                       
                                     <div class="col-md-10">
+                                        <h3>Bem vindo ao Sistema de Patrimônio 1.2</h3>
                                         <div class="col-md-10">
-                                    <h3>Bem vindo ao sistema de patrimônio.</h3>
-                                    <h4>Versão 1.1  -  Lançado 08 de janeiro de 2018</h4>
-                                    <p>
-                                        <b>Notas da versão 1.1</b><br> 
-                                        O menu "Relatório" recebeu a opção de alterar informações do cadastro de patrimônio (descrição, valor, tipo). <br>
-                                    </p>
-                                    <p>
-                                        <b>Notas da versão 1.0</b><br> 
-                                        Lançamento oficial do sistema para uso. Todas as funções básicas já estão funcionais.
-                                    </p>
-                                    </div>
+                                            <p>
+                                                <b>Notas da versão 1.2</b> <small>-  Lançado 12 de janeiro de 2018</small> <br> 
+                                                Atualização de prevenção de erros futuros "Notice: Use of undefined constant ID. <br>
+                                            </p>
+                                            <p>
+                                                <b>Notas da versão 1.1</b><small>-  Lançado 08 de janeiro de 2018</small><br> 
+                                                O menu "Relatório" recebeu a opção de alterar informações do cadastro de patrimônio (descrição, valor, tipo). <br>
+                                            </p>
+                                            <p>
+                                                <b>Notas da versão 1.0</b><br> 
+                                                Lançamento oficial do sistema para uso. Todas as funções básicas já estão funcionais.
+                                            </p>
+                                        </div>
+                                    </div>                                       
                                 </div>
-                                    
-                        </div>
-<!--                            <div class="card">
-                                <div class="col-md-10">
-                                    <?php
+                            </div>
+                            <!--                            <div class="card">
+                                                            <div class="col-md-10">
+                            <?php
 //                                include './conn.php';
 //                                $query_p = "select count(idpatrimonio) as quantidade, sum(valor_compra) as valor from patrimonio where status = 1;";
 //                                $select_resultado = mysqli_query($connect, $query_p);
@@ -122,13 +126,13 @@
 //                                    echo "Itens registrados: $row[quantidade] <br>";
 //                                    echo "Valor total (compra): $row[valor] <br>";
 //                                }
-                                    ?>
-                                </div>
-                            </div> -->
+                            ?>
+                                                            </div>
+                                                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
     </body>
 

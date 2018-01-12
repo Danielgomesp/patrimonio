@@ -6,7 +6,7 @@
         <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-        <title>Patrimonio GV Shopping</title>
+        <title>Patrimonio</title>
 
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <meta name="viewport" content="width=device-width" />
@@ -186,11 +186,11 @@
                                                         include './conn.php';
                                                         session_start(); //inicia sessão que registra as variáveis pra enviar para outra página: PDF.php
                                                         //variáveis
-                                                        $local = $_POST['local'];
-                                                        $tipo = $_POST['tipo'];
-                                                        $registro = $_POST['registro'];
-                                                        $descricao = $_POST['descricao'];
-                                                        $nf = $_POST['nf'];
+                                                        $local = $_POST[local];
+                                                        $tipo = $_POST[tipo];
+                                                        $registro = $_POST[registro];
+                                                        $descricao = $_POST[descricao];
+                                                        $nf = $_POST[nf];
                                                         //variáveis de sessão
                                                         $_SESSION['local'] =$local;
                                                         $_SESSION['tipo']=$tipo;
