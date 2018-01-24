@@ -186,11 +186,11 @@
                                                         include './conn.php';
                                                         session_start(); //inicia sessão que registra as variáveis pra enviar para outra página: PDF.php
                                                         //variáveis
-                                                        $local = $_POST[local];
-                                                        $tipo = $_POST[tipo];
-                                                        $registro = $_POST[registro];
-                                                        $descricao = $_POST[descricao];
-                                                        $nf = $_POST[nf];
+                                                        $local = $_POST['local'];
+                                                        $tipo = $_POST['tipo'];
+                                                        $registro = $_POST['registro'];
+                                                        $descricao = $_POST['descricao'];
+                                                        $nf = $_POST['nf'];
                                                         //variáveis de sessão
                                                         $_SESSION['local'] =$local;
                                                         $_SESSION['tipo']=$tipo;
