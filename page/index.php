@@ -98,7 +98,7 @@
                             <div class="card">                                
                                 <div class="card">                                       
                                     <div class="col-md-10">
-                                        <h3>Bem vindo ao Sistema de Patrimônio 1.2</h3>
+                                        <h3>Bem vindo ao Sistema de Patrimônio 1.2 Home Test</h3>
                                         <div class="col-md-10">
                                             <p>
                                                 <b>Notas da versão 1.2</b> <small>-  Lançado 12 de janeiro de 2018</small> <br> 
